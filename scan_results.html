@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results for {{ url }}</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>Missing security headers:</p>
+        <ul>
+            {% for header in missing_headers %}
+                <li>{{ header }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html> 
